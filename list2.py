@@ -5,8 +5,8 @@ Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "stephguirand"
-"""
+__author__ = """
+stephguirand
 Help from demo, lessons and activities, youtube videos in canvas and
 own search on youtube,
 stack overflow, Tutors, Facilitators and talking about
@@ -85,20 +85,20 @@ def empty_filter(list1):
 # ascending sorted order.
 
 
-def linear_merge(list1, list2):
-    list1.extend(list2)
-    return sorted(list1)
-
 # def linear_merge(list1, list2):
-#     result = []
-#     while len(list1) and len(list2):
-#         if list1[0] < list2[0]:
-#             result.append(list1.pop(0))
-#         else:
-#             result.append(list2.pop(0))
-#     result.extend(list1)
-#     result.extend(list2)
-#     return result
+#     list1.extend(list2)
+#     return sorted(list1)
+
+def linear_merge(list1, list2):
+    result = []
+    while len(list1) and len(list2):
+        if list1[0] < list2[0]:
+            result.append(list1.pop(0))
+        else:
+            result.append(list2.pop(0))
+    result.extend(list1)
+    result.extend(list2)
+    return result
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
