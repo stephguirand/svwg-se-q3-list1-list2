@@ -5,8 +5,8 @@ Kenzie assignment: List1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "stephguirand"
-"""
+__author__ = """
+stephguirand
 Help from demo, lessons and activities, youtube videos in canvas and
 own search on youtube,
 stack overflow, Tutors, Facilitators and talking about assignment
