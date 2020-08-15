@@ -5,7 +5,13 @@ Kenzie assignment: List1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = """
+stephguirand
+Help from demo, lessons and activities, youtube videos in canvas and
+own search on youtube,
+stack overflow, Tutors, Facilitators and talking about assignment
+in study group.
+"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -26,9 +32,11 @@ __author__ = "???"
 
 
 def match_ends(words):
-    # your code here
-    return
-
+    count = 0
+    for word in words:
+        if len(word) >= 2 and word[0] == word[-1]:
+            count += 1
+    return count
 
 # B. front_x
 # Given a list of strings, return a list with the strings in
@@ -42,9 +50,18 @@ def match_ends(words):
 
 
 def front_x(words):
-    # your code here
-    return
+    x_list = []
+    norm_list = []
+    for word in words:
+        if word[0] == 'x':
+            x_list.append(word)
+        else:
+            norm_list.append(word)
+    x_list.sort()
+    norm_list.sort()
+    return x_list + norm_list
 
+    # your code here
 
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in
@@ -56,12 +73,21 @@ def front_x(words):
 
 
 def sort_last(tuples):
-    # your code here
-    return
+    return sorted(tuples, key=last)
 
+
+def last(t):
+    return t[-1]
+
+# def sort_last(tuples):
+#     return(sorted(tuples, key=lambda x: x[-1]))
+
+    # your code here
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '

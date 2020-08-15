@@ -5,7 +5,13 @@ Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = """
+stephguirand
+Help from demo, lessons and activities, youtube videos in canvas and
+own search on youtube,
+stack overflow, Tutors, Facilitators and talking about
+assignment in study group
+"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -28,8 +34,18 @@ __author__ = "???"
 
 
 def remove_adjacent(nums):
-    # your code here
-    return
+    result = []
+    for num in nums:
+        if len(result) == 0 or num != result[-1]:
+            result.append(num)
+    return result
+
+
+# def remove_adjacent(nums):
+#     for i, (a, b) in enumerate(zip(nums, nums[1:])):
+#         if a == b:
+#             return nums[:i] + remove_adjacent(nums[i+1:])
+#     return nums
 
 
 # E. zip_merge
@@ -43,8 +59,7 @@ def remove_adjacent(nums):
 
 
 def zip_merge(list1, list2):
-    # your code here
-    return
+    return(list(map(''.join, zip(list1, list2))))
 
 
 # F. empty_filter
@@ -57,9 +72,7 @@ def zip_merge(list1, list2):
 
 
 def empty_filter(list1):
-    # your code here
-    return
-
+    return(list(filter(None, list1)))
 
 # G. linear_merge
 # Given two lists sorted in increasing order, create and
@@ -72,13 +85,25 @@ def empty_filter(list1):
 # ascending sorted order.
 
 
-def linear_merge(list1, list2):
-    # your code here
-    return
+# def linear_merge(list1, list2):
+#     list1.extend(list2)
+#     return sorted(list1)
 
+def linear_merge(list1, list2):
+    result = []
+    while len(list1) and len(list2):
+        if list1[0] < list2[0]:
+            result.append(list1.pop(0))
+        else:
+            result.append(list2.pop(0))
+    result.extend(list1)
+    result.extend(list2)
+    return result
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
